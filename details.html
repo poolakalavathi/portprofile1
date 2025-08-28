@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Poola Kalavathi | Portfolio</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0e0e0e;
+      color: #e5e5e5;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: linear-gradient(90deg, #0d0d0d, #00d4a0);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.3rem 0.5rem;
+      transition: color 0.3s, border-bottom 0.3s;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #00d4a0;
+      border-bottom: 2px solid #00d4a0;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding-top: 80px;
+      gap: 3rem;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, #00d4a0, #101010);
+    }
+
+    .hero img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 0 20px #00d4a0aa;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      color: #fff;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Video Resume */
+    .video-resume {
+      margin: 3rem auto;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+    .video-resume video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00d4a0aa;
+      outline: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 3rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00d4a0;
+      border-bottom: 2px solid #00d4a0;
+      display: inline-block;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill {
+      background: #1b1b1b;
+      padding: 0.7rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 600;
+      box-shadow: 0 0 10px #00d4a0aa;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: default;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+      background: #00d4a0;
+      color: #121212;
+    }
+
+    /* Projects */
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: #1b1b1b;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00d4a0aa;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.7rem;
+      color: #00d4a0;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    /* Contact */
+    .contact-info {
+      margin-top: 1rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-info a {
+      color: #00d4a0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #33e0bb;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+      }
+
+      .hero img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Poola Kalavathi</div>
+    <nav>
+      <ul>
+        <li><a href="#about" class="active">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#video">Video Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <img src="k1.jpeg" alt="Poola Kalavathi" />
+    <div class="hero-text">
+      <h1>Hello, I'm Poola Kalavathi</h1>
+      <p>Currently pursuing MCA from Mother Theresa Institute of Computer Application. Passionate about software development, problem-solving, and creating innovative projects with the latest technology.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Java</div>
+      <div class="skill">Python</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Django</div>
+      <div class="skill">HTML & CSS</div>
+    </div>
+  </section>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-list">
+    
+    <div class="project-card">
+      <h3>Calculator</h3>
+      <p>A responsive calculator web app built with HTML, CSS, and JavaScript.</p>
+      <a href="https://PoolaKalavathi.github.io/addition_form" target="_blank" class="project-link">View Project</a>
+      <a href="https://github.com/PoolaKalavathi/addition_form" target="_blank" class="project-link">Source Code</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Clock Project</h3>
+      <p>A simple and responsive digital clock built with HTML, CSS, and JavaScript that displays real-time updates.</p>
+      <a href="https://PoolaKalavathi.github.io/clock" target="_blank" class="project-link">View Project</a>
+      <a href="https://github.com/PoolaKalavathi/clock" target="_blank" class="project-link">Source Code</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Task Tracker</h3>
+      <p>A web application that helps users track their tasks efficiently with a clean UI and real-time updates.</p>
+      <a href="https://PoolaKalavathi.github.io/task" target="_blank" class="project-link">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Report Project</h3>
+      <p>A project that showcases detailed reports or analysis (e.g., academic, data, or web reports).</p>
+      <a href="https://PoolaKalavathi.github.io/report/" target="_blank" class="project-link">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Event Scheduler App</h3>
+      <p>Mobile app developed to assist college students with event scheduling and reminders.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Sentiment Analysis</h3>
+      <p>Machine Learning project analyzing sentiment from social media posts using Python.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section id="video" class="video-resume">
+  <h2>Video Resume</h2>
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; box-shadow: 0 0 20px #00d4a0aa; border-radius: 10px;">
+    <iframe 
+      src="https://www.youtube.com/embed/3MJh2Dm9IgQ" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border-radius: 10px;">
+    </iframe>
+  </div>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:kpoolakalavathi@gmail.com">kpoolakalavathi@gmail.com</a></p>
+      <p>Phone: +91 9121820979</p>
+    
+      <p>GitHub: <a href="https://github.com/poolakalavathi" target="_blank" rel="noopener noreferrer">github.com/poolakalavathi</a></p>
+    </div>
+  </section>
+
+  <script>
+    // Highlight active menu link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
